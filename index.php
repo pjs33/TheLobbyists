@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>The Lobbyists</title>
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -35,35 +35,69 @@
         height: 100%;
       }
 
-      .navbar {
-        position: absolute;
-        top: 0px;
+      header {
+        position: relative;
         width: 100%;
-        height: 75px;
-        border-bottom: 5px white solid;
-      }
-
-      .header-image {
+        height: 100%;
         background: url(css/images/us_capital_building_blur2.png) no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        width: 100%;
-        height: 100%;
-        position: relative;
-        text-align: center;
-        padding-top: 200px;
+        background-color: #bfbfbf;
       }
 
-      h3 {
+      .navbar {
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #e7e7e7; 
+      }
+
+      .navbar a {
+        color: #e7e7e7;
+        font-weight: 700;
+        font-size: 18px;
+        text-shadow: 0 0 5px #595959;
+        text-decoration: none;
+        margin-right: 20px;
+        text-transform: uppercase;
+      }
+
+      .navbar a:hover {
+        color: white;
+      }
+
+      #navbar-left {
+        width: 200px;
+        line-height: 45px;
+        padding-left: 20px;
+        float: left;
+      }
+
+      #navbar-right {
+        width: 467px;
+        line-height: 45px;
+        padding-left: 20px;
+        float: right;
+      }
+
+      .header-content {
+        text-align: center;
+        position: absolute;
+        top: 25%;
+        width: 100%;
+        height: 75%;
+      }
+
+      h1 {
         margin: 0px;
         color: white;
         font-weight: 700;
         font-size: 100px;
         text-transform: uppercase;
         font-family: 'Lobster Two', cursive;
-        text-shadow: 0 0 10px #888888;
+        text-shadow: 0 0 10px #595959;
+
       }
 
       hr {
@@ -71,7 +105,7 @@
         border: 1px solid #ab0520;
         margin-top: 40px; 
         margin-bottom: 20px;
-        box-shadow: 0 0 10px #888888;
+        box-shadow: 0 0 10px #b3b3b3;
       }
 
       .subheader {
@@ -79,49 +113,72 @@
         font-weight: 700;
         font-size: 40px;
         text-transform: uppercase;
-        text-shadow: 0 0 10px #888888;
-      }
-
-      #mission-statement {
-        color: white;
-        font-weight: 900;
-        font-size: 20px;
-        text-shadow: -1px 0 2px #262626, 0 1px 2px #262626, 1px 0 2px #262626, 0 -1px 2px #262626;
-        width: 850px;
-        margin: auto;
-        text-align: center;
-        margin-top: 10px;
-        border-radius: 50px;
-        
-        padding: 20px;
+        text-shadow: 0 0 10px #b3b3b3;
       }
 
       button {
-        padding: 25px !important;
-        font-size: 15px !important;
-        font-weight: 600 !important;
+        margin-top: 75px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 40px;
+        padding-left: 40px;
+        border: 0px;
+        border-radius: 50px;
+        background-color: #ab0520;
+        color: white;
+        font-weight: 700;
+        font-size: 25px;
         text-transform: uppercase;
-        border-radius: 50px !important;
-        margin-top: 10px;
-        opacity: 0.9;
-        box-shadow: 0 0 15px #888888;
       }
 
+      button:hover {
+        background-color: #ab0520;
+      }
+
+      #how-it-works-button {
+        position: absolute;
+        bottom: 1%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+      }
 
     </style>
 
   </head>
   <body>
-    <div class="navbar">
-    </div>
 
-    <div class="header-image">
-      <h3>The Lobbyists</h3>
-      <hr>
-      <p class="subheader">Crowdfunded Lobbying</p>
-      <p id="mission-statement">Our goal is to make the government listen to the people and get pass the legislation that we want passed.</p>
-      <button type="button" class="btn btn-primary">How It Works</button>
-    </div>
+    <header>
+      <div class="navbar">
+        <div id="navbar-left">
+          <a href="#">Sign-up</a>
+          <a href="#">Login</a>
+        </div>
+
+        <div id="navbar-right">
+          <a href="#">Take Action</a>
+          <a href="#">Discuss</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+
+      <div class="header-content">
+        <h1>The <br> Lobbyists</h1>
+        <hr>
+        <p class="subheader">Crowdfunded Lobbying</p>
+        <p style="color: white;
+        font-weight: 700;
+        font-size: 25px;text-transform:uppercase;text-shadow: -1px 0 10px #737373, 0 1px 10px #737373, 1px 0 10px #737373, 0 -1px 10px #737373;margin-top:-10px;">Giving power to the people</p>
+      </div>
+
+      <div id="how-it-works-button">
+        <button type="button" class="">How It Works</button>
+        <br>
+        <span class="glyphicon glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+      </div>
+      
+    </header>
 
   </body>
 </html>
