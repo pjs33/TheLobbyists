@@ -51,6 +51,7 @@
         width: 100%;
         height: 50px;
         border-bottom: 1px solid #e7e7e7; 
+        background-color: #ab0520;
       }
 
       .navbar a {
@@ -68,7 +69,7 @@
       }
 
       #navbar-left {
-        width: 200px;
+        width: 300px;
         line-height: 45px;
         padding-left: 20px;
         float: left;
@@ -143,6 +144,11 @@
         margin-top: 30px;
       }
 
+      #logoImage {
+        margin: 0 50px 5px 0;
+
+      }
+
     </style>
 
   </head>
@@ -151,6 +157,7 @@
     <header>
       <div class="navbar">
         <div id="navbar-left">
+          <img id="logoImage" src="./css/images/logov2.png" alt="logoImage" height="45" width="45">
           <a href="#">Sign-up</a>
           <a href="#">Login</a>
         </div>
