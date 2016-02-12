@@ -44,18 +44,17 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        background-color: #bfbfbf;
+        background-color: #8c8c8c;
       }
 
       .navbar {
         width: 100%;
         height: 50px;
-        border-bottom: 1px solid #e7e7e7; 
-        background-color: #ab0520;
+        border-bottom: 1px solid #e7e7e7;
       }
 
       .navbar a {
-        color: #e7e7e7;
+        color: white;
         font-weight: 700;
         font-size: 18px;
         text-shadow: 0 0 5px #595959;
@@ -65,11 +64,11 @@
       }
 
       .navbar a:hover {
-        color: white;
+        color: #e7e7e7;
       }
 
       #navbar-left {
-        width: 300px;
+        width: 200px;
         line-height: 45px;
         padding-left: 20px;
         float: left;
@@ -82,12 +81,17 @@
         float: right;
       }
 
+      .affix {
+        background-color: #ab0520;
+        border: none;
+        z-index: 1000;
+      }
+
       .header-content {
         text-align: center;
         position: absolute;
-        top: 25%;
+        top: 20%;
         width: 100%;
-        height: 75%;
       }
 
       h1 {
@@ -101,7 +105,7 @@
 
       }
 
-      hr {
+      header hr {
         width: 300px; 
         border: 1px solid #ab0520;
         margin-top: 40px; 
@@ -117,8 +121,17 @@
         text-shadow: 0 0 10px #b3b3b3;
       }
 
-      button {
-        margin-top: 75px;
+      .slogan {
+        color: white;
+        font-weight: 700;
+        font-size: 25px;
+        text-transform: uppercase;
+        text-shadow: -1px 0 10px #595959, 0 1px 10px #595959, 1px 0 10px #595959, 0 -1px 10px #595959;
+        margin-top:-10px;
+      }
+
+      header button {
+        margin-top: 55px;
         padding-top: 15px;
         padding-bottom: 15px;
         padding-right: 40px;
@@ -128,25 +141,108 @@
         background-color: #ab0520;
         color: white;
         font-weight: 700;
-        font-size: 25px;
+        font-size: 20px;
         text-transform: uppercase;
       }
 
-      button:hover {
-        background-color: #ab0520;
+      header button:hover {
+        background-color: #df072a;
       }
 
-      #how-it-works-button {
+      #about {
+        background-color: #666666;
+        width: 100%;
+        height: 600px;
+        position: relative;
+      }
+
+      #about-content {
         position: absolute;
-        bottom: 1%;
+        top: 50px;
         width: 100%;
         text-align: center;
-        margin-top: 30px;
       }
 
-      #logoImage {
-        margin: 0 50px 5px 0;
+      #about-content h2 {
+        margin: 0px;
+        color: white;
+        font-weight: 700;
+        font-size: 27px;
+      }
 
+      #about hr {
+        width: 100px; 
+        border: 1.5px solid #153e84;
+        margin-bottom: 40px;
+      }
+
+      #about-content p {
+        color: rgba(255,255,255,.7);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.5;
+        font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .step {
+        display: inline-block;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 300px;
+        vertical-align: top;
+      }
+
+      .step h3 {
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+
+      .step-icon {
+        width: 150px;
+        height: 150px;
+      }
+
+      #issues {
+        background-color: white;
+        width: 100%;
+        height: 500px;
+        position: relative;
+      }
+
+      .circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        border: 3px white solid;
+        margin: auto;
+        text-align: center;
+        box-shadow: 0 0 15px #b3b3b3;
+      }
+
+      .circle img {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #about button {
+        margin-top: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 40px;
+        padding-left: 40px;
+        border: 0px;
+        border-radius: 50px;
+        background-color: #153e84;
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: uppercase;
       }
 
     </style>
@@ -155,9 +251,8 @@
   <body>
 
     <header>
-      <div class="navbar">
+      <nav class="navbar" data-spy="affix" data-offset-top="0">
         <div id="navbar-left">
-          <img id="logoImage" src="./css/images/logov2.png" alt="logoImage" height="45" width="45">
           <a href="#">Sign-up</a>
           <a href="#">Login</a>
         </div>
@@ -168,24 +263,59 @@
           <a href="#">About</a>
           <a href="#">Contact</a>
         </div>
-      </div>
+      </nav>
 
       <div class="header-content">
         <h1>The <br> Lobbyists</h1>
         <hr>
         <p class="subheader">Crowdfunded Lobbying</p>
-        <p style="color: white;
-        font-weight: 700;
-        font-size: 25px;text-transform:uppercase;text-shadow: -1px 0 10px #737373, 0 1px 10px #737373, 1px 0 10px #737373, 0 -1px 10px #737373;margin-top:-10px;">Giving power to the people</p>
-      </div>
-
-      <div id="how-it-works-button">
-        <button type="button" class="">How It Works</button>
+        <p class="slogan">Giving power to the people</p>
+        <button type="button">How It Works</button>
         <br>
         <span class="glyphicon glyphicon glyphicon-menu-down" aria-hidden="true"></span>
       </div>
       
     </header>
+
+    <div id="about">
+      <div id="about-content">
+        <h2>How do we make the politicians listen?</h2>
+        <hr>
+        <div class="step">
+          <div class="circle">
+            <img src="/TheLobbyists/css/images/lightbulb_icon.png" class="step-icon">
+          </div>
+          <h3>Support An Idea</h3>
+          <p>The American people support an idea for a bill that they want to become law.</p>
+        </div>
+        <div class="step">
+          <div class="circle">
+            <img src="/TheLobbyists/css/images/crowdfunding_icon2.png" class="step-icon">
+          </div>
+          <h3>Crowdfund The Cause</h3>
+          <p>We start a corwdfunded campaign to reach politicians with the most supported ideas.</p>
+        </div>
+        <div class="step">
+          <div class="circle">
+            <img src="/TheLobbyists/css/images/handshake_icon.png" class="step-icon">
+          </div>
+          <h3>Hire A Lobbyist</h3>
+          <p>We hire a professional lobbyist to draft a bill that is supported by the people.</p>
+        </div>
+        <div class="step">
+          <div class="circle">
+            <img src="/TheLobbyists/css/images/bill_icon.png" class="step-icon" style="width:130px;height:130px;">
+          </div>
+          <h3>Pass The Bill</h3>
+          <p>The lobbyist will work directly with legislatures to pass the bill.</p>
+        </div>
+        <br>
+        <button type="button">Find Out More</button>
+      </div>
+    </div>
+
+    <div id="issues">
+    </div>
 
   </body>
 </html>
