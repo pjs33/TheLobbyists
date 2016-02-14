@@ -28,6 +28,7 @@
     <![endif]-->
 
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes|Lobster+Two|Cookie|Playball' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,900italic' rel='stylesheet' type='text/css'>
 
     <style type="text/css">
       html, body {
@@ -38,7 +39,7 @@
       header {
         position: relative;
         width: 100%;
-        height: 100%;
+        height: 90%;
         background: url(css/images/us_capital_building_blur2.png) no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -51,6 +52,7 @@
         width: 100%;
         height: 50px;
         border-bottom: 1px solid #e7e7e7;
+        background-color: #ab0520;
       }
 
       .navbar a {
@@ -100,7 +102,7 @@
         font-weight: 700;
         font-size: 100px;
         text-transform: uppercase;
-        font-family: 'Lobster Two', cursive;
+        font-family: 'Playfair Display', serif;
         text-shadow: 0 0 10px #595959;
 
       }
@@ -149,33 +151,32 @@
         background-color: #df072a;
       }
 
-      #about {
-        background-color: #666666;
+      .informationBlock {
+        padding-top: 40px;
+        padding-bottom: 40px;
         width: 100%;
-        height: 600px;
         position: relative;
       }
 
+      #about {
+        background-color: #666666;
+      }
       #about-content {
-        position: absolute;
         top: 50px;
         width: 100%;
         text-align: center;
       }
-
       #about-content h2 {
         margin: 0px;
         color: white;
         font-weight: 700;
         font-size: 27px;
       }
-
       #about hr {
         width: 100px; 
         border: 1.5px solid #153e84;
         margin-bottom: 40px;
       }
-
       #about-content p {
         color: rgba(255,255,255,.7);
         font-weight: 500;
@@ -185,6 +186,35 @@
         max-width: 800px;
         margin: auto;
       }
+
+      #success {
+        color: white;
+        background-color: #153e84;
+      }
+      .successStory {
+        text-align: center;
+        font-style: italic;
+        width: 80%;
+        font-size: 24px;
+        font-weight: 300;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #issuesSection {
+        background-color: #ab0520;
+        color: white;
+      }
+      #popularIssues {
+        text-align: center;
+      }
+      .issueLink {
+        color: white;
+      }
+
+
+      
 
       .step {
         display: inline-block;
@@ -245,8 +275,22 @@
         text-transform: uppercase;
       }
 
+      #seeIssues, #howItWorks {
+        width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        display:inline-block;
+      }
+
     </style>
 
+    <script>
+    $("#button").click(function() {
+      $('html, body').animate({
+          scrollTop: $("#elementtoScrollToID").offset().top
+      }, 2000);
+    });
+    </script>
   </head>
   <body>
 
@@ -270,14 +314,29 @@
         <hr>
         <p class="subheader">Crowdfunded Lobbying</p>
         <p class="slogan">Giving power to the people</p>
-        <button type="button">How It Works</button>
+        <div id="seeIssues">
+          <button type="button">See Some Issues</button>
+          <br>
+           <span class="glyphicon glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+        </div>
+        <div id="howItWorks">
+          <button type="button">How It Works</button>
+          <br>
+          <span class="glyphicon glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+        </div>
         <br>
-        <span class="glyphicon glyphicon glyphicon-menu-down" aria-hidden="true"></span>
       </div>
       
     </header>
 
-    <div id="about">
+    <div id="success" class="informationBlock">
+      <p class="successStory">
+        "The Lobbyists really helped me get this law passed in my local state. Now my kids can go to school and get the great education they deserve"
+         <br>-Proud Parent
+      </p>
+    </div>
+
+    <div id="about" class="informationBlock">
       <div id="about-content">
         <h2>How do we make the politicians listen?</h2>
         <hr>
@@ -314,7 +373,27 @@
       </div>
     </div>
 
-    <div id="issues">
+    <div id="issuesSection" class="informationBlock">
+      <div id="popularIssues">
+        <?php 
+        require_once("./scripts/php/DatabaseAdaptor.php");
+
+        $model = new DatabaseConnection();
+
+        $issuesArray = $model->getAllIssuesALL();
+        $currentNum = 1;
+        for($i = 0; $i < 3; $i++) { ?>
+            <a target="_blank" class="issueLink"id="issueLink<?= $currentNum; ?>" style="display: inline-block;width: 300px;height: 300px;" href="http://localhost/HackArizona/issue_view.php?i= <?= $issuesArray[$i]["issue_id"]; ?>">
+            <div class="issue">
+              <h3 id="issueTitle<?= $currentNum; ?>" style="font-size: 15pt;"><?= $issuesArray[$i]["issue_name"]; ?></h3>
+              <img id="imgThumb<?= $currentNum; ?>" src="<?= $issuesArray[$i]["picture"]; ?>" class="img-square" alt="imgThumb<?= $currentNum; ?>" width="250" height="250">
+            </div></a>
+
+        <?php
+          $currentNum++;
+          }
+         ?>
+      </div>
     </div>
 
   </body>
