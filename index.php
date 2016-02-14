@@ -314,11 +314,11 @@
         <hr>
         <p class="subheader">Crowdfunded Lobbying</p>
         <p class="slogan">Giving power to the people</p>
-        <div id="seeIssues">
+         <!--<div id="seeIssues">
           <button type="button">See Some Issues</button>
           <br>
            <span class="glyphicon glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-        </div>
+        </div>-->
         <div id="howItWorks">
           <button type="button">How It Works</button>
           <br>
